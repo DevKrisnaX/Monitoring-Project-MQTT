@@ -1,0 +1,86 @@
+11:06:27.402 INFO - Using data dir '.\Blynk'
+11:06:28.019 INFO - Region : local. Host : 192.168.170.1.
+11:06:29.911 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+11:06:30.286 INFO - Reports : 0
+11:06:30.286 INFO - Didn't find custom user certificates.
+11:06:30.288 INFO - Didn't find Let's Encrypt certificates.
+11:06:30.288 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+11:06:30.288 WARN - ATTENTION. Server certificate paths (cert : 'C:\Server\ngrok', key : 'C:\Server\ngrok') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+11:06:33.076 INFO - HTTP API and WebSockets server listening at 8080 port.
+11:06:33.078 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+11:06:33.079 INFO - Mqtt hardware server listening at 8440 port.
+11:12:43.867 INFO - Using data dir '.\Blynk'
+11:12:44.426 INFO - Region : local. Host : 192.168.170.1.
+11:12:45.828 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+11:12:45.988 INFO - Reports : 0
+11:12:45.989 INFO - Didn't find custom user certificates.
+11:12:45.991 INFO - Didn't find Let's Encrypt certificates.
+11:12:45.991 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+11:12:45.991 WARN - ATTENTION. Server certificate paths (cert : 'C:\Server\ngrok', key : 'C:\Server\ngrok') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+11:12:48.785 ERROR- Error initializing HTTP API and WebSockets, port 8080
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:459) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:448) ~[?:?]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[?:?]
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562) ~[blynk-server.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:506) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:491) ~[blynk-server.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260) ~[blynk-server.jar:?]
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[blynk-server.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[blynk-server.jar:?]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[blynk-server.jar:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+11:15:23.782 INFO - Trying register user : krisnaadityapratama@students.amikom.ac.id, app : Blynk
+11:15:23.788 WARN - User with email krisnaadityapratama@students.amikom.ac.id already exists.
+11:15:23.806 WARN - User 'krisnaadityapratama@students.amikom.ac.id' credentials are wrong. /192.168.1.6:42036
+11:15:52.408 WARN - User 'krisnaadityapratama@students.amikom.ac.id' credentials are wrong. /192.168.1.6:42046
+11:16:30.174 INFO - Trying register user : krisnaamikom@gmail.com, app : Blynk
+11:16:30.174 INFO - Registered krisnaamikom@gmail.com.
+11:16:30.231 INFO - krisnaamikom@gmail.com Blynk-app (android-22724) joined.
+11:16:32.607 WARN - Error sending greeting email for krisnaamikom@gmail.com.
+11:17:10.957 INFO - Creating new dashboard.
+11:17:12.917 ERROR- Error sending email auth token to user : krisnaamikom@gmail.com. Error: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials v9-20020a1709029a0900b001898ee9f723sm17603409plp.2 - gsmtp
+
+11:20:39.650 INFO - Using data dir '.\Blynk'
+11:20:40.229 INFO - Region : local. Host : 192.168.170.1.
+11:20:41.417 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+11:20:41.588 INFO - Reports : 0
+11:20:41.589 INFO - Didn't find custom user certificates.
+11:20:41.591 INFO - Didn't find Let's Encrypt certificates.
+11:20:41.591 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+11:20:41.591 WARN - ATTENTION. Server certificate paths (cert : 'C:\Server\ngrok', key : 'C:\Server\ngrok') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+11:20:44.241 ERROR- Error initializing HTTP API and WebSockets, port 8080
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:459) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:448) ~[?:?]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[?:?]
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562) ~[blynk-server.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:506) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:491) ~[blynk-server.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973) ~[blynk-server.jar:?]
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260) ~[blynk-server.jar:?]
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[blynk-server.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[blynk-server.jar:?]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[blynk-server.jar:?]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[blynk-server.jar:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+11:22:11.007 INFO - Creating new dashboard.
+11:22:12.999 ERROR- Error sending email auth token to user : krisnaamikom@gmail.com. Error: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials h12-20020a170902680c00b00192849d1209sm11305771plk.96 - gsmtp
+
+11:23:34.442 INFO - krisnaamikom@gmail.com Blynk-app (android-22724) joined.

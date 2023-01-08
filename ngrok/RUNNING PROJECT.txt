@@ -1,0 +1,68 @@
+Blynk--------
+Your Admin url is https://192.168.1.7:9443/admin
+Your Admin login email is admin@blynk.cc
+Your Admin password is A3FdETaUnUlmltNWI1AsWdJH
+
+
+
+
+MENJALANKAN CONFIGURASI STRESSTEST
+
+Stress test untuk server yang digunakan
+1.install Go
+2.download direktori mqtt server
+
+masuk ke direktori mqtt server
+cd (direktori)
+
+Menjalankan mqtt server
+mqtt-stresser.exe -broker 0.tcp.ap.ngrok.io:19105 -num-clients 50 -num-messages 150 -rampup-delay 1s -rampup-size 10 -global-timeout 180s -timeout 20s
+
+
+
+
+
+MOSQUITTO 
+
+Code 1
+mosquitto
+
+Code 2
+mosquitto_sub -t "IOT"
+
+Ubah Ngrok ip mosquitto
+ngrok tcp 1883
+
+Code blynk server
+java -jar ./blynk-server.jar -dataFolder ./Blynk
+
+Ubah Ngrok ip Blynk
+ngrok tcp 9443
+
+Masukkan Token ke codingan
+auth=" Token ";
+
+
+
+
+
+WEB INTERFACE
+Jalankan code di terminal VScode
+python apa.py
+
+CMD untuk menampilkan data manual
+mosquitto_pub  -t IOT -m "{\"parameters\": {\"temp\": 27}}"
+
+CMD untuk get data dari publisher
+mosquitto_pub -h 0.tcp.ap.ngrok.io -p 19105 -t IOT -m "{\"parameters\": {\"temp\": 27}}"  ??????????
+
+
+
+
+
+
+
+
+
+
+

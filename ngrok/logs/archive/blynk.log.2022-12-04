@@ -1,0 +1,11 @@
+22:09:20.148 INFO - Using data dir '.\Blynk'
+22:09:20.773 INFO - Region : local. Host : 192.168.170.1.
+22:09:22.242 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+22:09:22.775 INFO - Reports : 0
+22:09:22.775 INFO - Didn't find custom user certificates.
+22:09:22.775 INFO - Didn't find Let's Encrypt certificates.
+22:09:22.775 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+22:09:22.775 WARN - ATTENTION. Server certificate paths (cert : 'c:\ngrok', key : 'c:\ngrok') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+22:09:25.039 INFO - HTTP API and WebSockets server listening at 8080 port.
+22:09:25.039 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+22:09:25.039 INFO - Mqtt hardware server listening at 8440 port.
