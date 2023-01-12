@@ -9,7 +9,7 @@ import sqlite3
 from paho.mqtt import client as mqtt_client
 
 broker 		= '0.tcp.ap.ngrok.io'
-port 		= 12529
+port 		= 18552
 topic 		= "IOT"
 client_id 	= f'python-mqtt-{random.randint(0, 100)}'
 
@@ -33,7 +33,8 @@ def subscribe(client: mqtt_client):
         _data = json.loads(msg.payload.decode())
         temp = str(_data[temp1][hum1][kipasrak1][sprayrak1]
         [temp2][hum2][kipasrak2][sprayrak2]
-        [temp3][hum3][kipasrak3][sprayrak3])
+        [temp3][hum3][kipasrak3][sprayrak3]
+        [air])
 
 
     client.subscribe(topic)
@@ -163,6 +164,12 @@ Spray_label3 = Label(window,
                  font=("Horta", 20))
 
 
+#### Message Ultra
+air_label = Label(window,
+                 text="",
+                 bg="white",
+                 fg="black",
+                 font=("Horta", 20))
 
 
 # DATABASE
@@ -205,6 +212,9 @@ def subscribe(client: mqtt_client):
         global moist_label3
         global Kipas_label3
         global Spray_label3
+
+        #MESSAGE AIR
+        global air_label
 
 
         try:
@@ -260,7 +270,11 @@ def subscribe(client: mqtt_client):
             Spray_label3.place(x=830,y=553, anchor=CENTER)
             Spray_label3.config(text=spray3)
 
-            
+
+            #Label Air
+            air = str(_data["air"])
+            air_label.place(x=830,y=650, anchor=CENTER)
+            air_label.config(text=air)
 
             data_sensor_val = (temp1, moist1)
             cur.execute(
