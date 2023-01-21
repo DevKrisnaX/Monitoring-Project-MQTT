@@ -9,7 +9,7 @@ import sqlite3
 from paho.mqtt import client as mqtt_client
 
 broker 		= '0.tcp.ap.ngrok.io'
-port 		= 17904
+port 		= 13769
 topic 		= "IOT"
 client_id 	= f'python-mqtt-{random.randint(0, 100)}'
 
@@ -31,7 +31,7 @@ import json
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         _data = json.loads(msg.payload.decode())
-        temp = str(_data[temp1][hum1][kipasrak1][sprayrak1][temp2][hum2][kipasrak2][sprayrak2][temp3][hum3][kipasrak3][sprayrak3][air])
+        temp = str(_data[temp1][hum1][kipasrak1][sprayrak1][temp2][hum2][kipasrak2][sprayrak2][temp3][hum3][kipasrak3][sprayrak3])
 
 
     client.subscribe(topic)
@@ -71,7 +71,6 @@ moist_label1 = Label(window,
                  bg="white",
                  fg="black",
                  font=("Horta", 20))
-
 
 # Label kipas 1
 Kipas_label1 = Label(window,
@@ -161,12 +160,6 @@ Spray_label3 = Label(window,
                  font=("Horta", 20))
 
 
-#### Message Ultra
-air_label = Label(window,
-                 text="",
-                 bg="white",
-                 fg="black",
-                 font=("Horta", 20))
 
 
 # DATABASE
@@ -209,9 +202,6 @@ def subscribe(client: mqtt_client):
         global moist_label3
         global Kipas_label3
         global Spray_label3
-
-        #MESSAGE AIR
-        global air_label
 
 
         try:
@@ -267,13 +257,7 @@ def subscribe(client: mqtt_client):
             Spray_label3.place(x=830,y=553, anchor=CENTER)
             Spray_label3.config(text=spray3)
 
-            air1 = str(_data["airdump"])
-            air_label.place(x=830,y=553, anchor=CENTER)
-            air_label.config(text=air1)
-
-
-
-
+            
             data_sensor_val = (temp1, moist1)
             cur.execute(
                 "INSERT INTO JamurTemp ('time',temp11,moisture11) VALUES ('{}',?,?);".format(current_time), data_sensor_val)
