@@ -1,3 +1,4 @@
+# Library yang digunakan
 from tkinter import *
 import random
 import time
@@ -6,20 +7,24 @@ from paho.mqtt import client as mqtt_client
 import json
 import sqlite3 
 
+# Setting Server
 broker = 'tr2.localto.net'
-port = 40180
+port = 34945
 topic = "Mqtt"
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 
+# Buat Database, Ubah sesuai kemauan
 con = sqlite3.connect("database.sqlite", check_same_thread=False)
 cur = con.cursor()
 
+# Buat Tabel pada DB
 buat_tabel = '''CREATE TABLE IF NOT EXISTS JamurTemp(
                     time TEXT NOT NULL,
                     rak1_temp TEXT NOT NULL,
                     rak1_hum TEXT NOT NULL
                 );'''
 
+# Cek Apakah Tabel Berhasil Dibuat
 try:
     cur.execute(buat_tabel)
     con.commit()
@@ -28,6 +33,7 @@ except Exception as e:
     print("Gagal Membuat Tabel:", e)
     con.rollback()
 
+# Cek Server Running Atau Tidak
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
@@ -40,9 +46,10 @@ def connect_mqtt() -> mqtt_client:
     client.connect(broker, port)
     return client
 
-# DATABASE
+# Waktu timestamp
 current_time = datetime.datetime.now()
 
+# Ambil Data Dari API ESP
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         try:
@@ -52,10 +59,12 @@ def subscribe(client: mqtt_client):
             moist1 = str(_data["moisture1"])
             kipas1 = str(_data["kipas1"])
             spray1 = str(_data["spray1"])
+
             temp2 = str(_data["temp2"])
             moist2 = str(_data["moisture2"])
             kipas2 = str(_data["kipas2"])
             spray2 = str(_data["spray2"])
+
             temp3 = str(_data["temp3"])
             moist3 = str(_data["moisture3"])
             kipas3 = str(_data["kipas3"])
@@ -107,7 +116,7 @@ def subscribe(client: mqtt_client):
 window = Tk()
 window.title("MONITORING JAMUR DASHBOARD")
 window.geometry('1000x700')  # Width, Height
-window.resizable(False, False)  # Width, Height
+window.resizable(False, False)
 window.configure(bg="white")
 
 # Banner image
