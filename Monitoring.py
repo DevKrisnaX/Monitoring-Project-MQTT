@@ -8,8 +8,8 @@ import json
 import sqlite3 
 
 # Setting Server
-broker = 'tr2.localto.net'
-port = 34945
+broker = 'tr3.localto.net'
+port = 40357
 topic = "Mqtt"
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 
@@ -22,6 +22,7 @@ buat_tabel = '''CREATE TABLE IF NOT EXISTS JamurTemp(
                     time TEXT NOT NULL,
                     rak1_temp TEXT NOT NULL,
                     rak1_hum TEXT NOT NULL
+                   
                 );'''
 
 # Cek Apakah Tabel Berhasil Dibuat
