@@ -9,8 +9,8 @@ import sqlite3
 
 # Setting Server
 broker = 'tr3.localto.net'
-port = 40357
-topic = "Mqtt"
+port = 36733
+topic = "Jamur"
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 
 # Buat Database, Ubah sesuai kemauan
@@ -66,11 +66,6 @@ def subscribe(client: mqtt_client):
             kipas2 = str(_data["kipas2"])
             spray2 = str(_data["spray2"])
 
-            temp3 = str(_data["temp3"])
-            moist3 = str(_data["moisture3"])
-            kipas3 = str(_data["kipas3"])
-            spray3 = str(_data["spray3"])
-
             print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
             data_sensor_val = (current_time, temp1, moist1)
             cur.execute("INSERT INTO JamurTemp (time,rak1_temp,rak1_hum) VALUES(?, ?, ?)",(data_sensor_val))
@@ -94,15 +89,6 @@ def subscribe(client: mqtt_client):
             Kipas_label2.config(text=kipas2)
             Spray_label2.place(x=500, y=553, anchor=CENTER)
             Spray_label2.config(text=spray2)
-            #RAK3
-            temp_label3.place(x=825, y=217, anchor=CENTER)
-            temp_label3.config(text=temp3)
-            moist_label3.place(x=830, y=327, anchor=CENTER)
-            moist_label3.config(text=moist3)
-            Kipas_label3.place(x=830, y=447, anchor=CENTER)
-            Kipas_label3.config(text=kipas3)
-            Spray_label3.place(x=830, y=553, anchor=CENTER)
-            Spray_label3.config(text=spray3)
 
             time.sleep(1)
         except json.decoder.JSONDecodeError as e:
@@ -116,14 +102,14 @@ def subscribe(client: mqtt_client):
 
 window = Tk()
 window.title("MONITORING JAMUR DASHBOARD")
-window.geometry('1000x700')  # Width, Height
+window.geometry('1440x1024')  # Width, Height
 window.resizable(False, False)
 window.configure(bg="white")
 
 # Banner image
-canvas = Canvas(window, width=1000, height=700)
+canvas = Canvas(window, width=1440, height=1024)
 canvas.place(x=0, y=0)
-img = PhotoImage(file="image\Layout.png")
+img = PhotoImage(file="image\Layout.jpg")
 canvas.create_image(0, 0, anchor=NW, image=img)
 
 #### RAK 1
@@ -149,19 +135,6 @@ temp_label2 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
 moist_label2 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
 Kipas_label2 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
 Spray_label2 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
-
-
-#### RAK 3
-# Label °C dan % 2
-tempC_label3 = Label(window, text=" °C", bg="white", fg="black", font=("Horta", 20))
-tempC_label3.place(x=840,y=200)
-moistP_label3 = Label(window, text=" %", bg="white", fg="black", font=("Horta", 20))
-moistP_label3.place(x=850,y=310)
-
-temp_label3 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
-moist_label3 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
-Kipas_label3 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
-Spray_label3 = Label(window,text="",bg="white",fg="black",font=("Horta", 20))
 
 
 def run():
